@@ -20,11 +20,11 @@ public class TimeInvocationHandler implements InvocationHandler {
         log.info("TimeProxy 실행");
         long start = System.currentTimeMillis();
 
-        method.invoke(target, args);
+        Object result = method.invoke(target, args);
 
         long end = System.currentTimeMillis();
-        long result = end - start;
-        log.info("TimeProxy 종료 resultTime = {}", result);
-        return result + "";
+        long resultTime = end - start;
+        log.info("TimeProxy 종료 resultTime = {}", resultTime);
+        return result;
     }
 }
