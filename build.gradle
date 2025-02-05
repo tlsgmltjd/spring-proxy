@@ -25,6 +25,11 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	// 자동 프록시 생성기(자동으로 프록시 객체를 빈에 등록해주는 빈 후처리기)를 스프링 빈으로 등록해준다.
+	// 스프링 빈에 등록된 어드바이저를 찾아 프록시를 적용할 대상으로 판단(어드바이저 안에 있는 포인트 컷으로)하여 프록시를 등록해준다. ㄷㄷ
+	implementation 'org.springframework.boot:spring-boot-starter-aop'
+
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
